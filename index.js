@@ -37,7 +37,17 @@ const questions = [
         message: "Tests",
         name: "tests",
     },
+    {
+        type: "input",
+        message: "What is your GitHub username?",
+        name: "github",
+    },
 
+    {
+        type: "input",
+        message: "What is your email address?",
+        name: "email"
+    }
 ];
 
 
@@ -49,8 +59,7 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
     inquirer.prompt(questions).then(data=>{
-        console.log(dataclear
-            )
+        console.log(data)
         let mdResponse = markdown(data);
         writeToFile("README.md", mdResponse);
     });
